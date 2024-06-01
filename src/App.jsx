@@ -5,32 +5,33 @@ const Card = () => {
   const [response, setResponse] = useState(null);
 
   const handleCheckout = async () => {
-    const options = {
-      method: "POST",
-      url: "https://sandbox.uddoktapay.com/api/checkout-v2",
+    let data = new FormData();
+    data.append("cus_name", "demo");
+    data.append("cus_email", "demo@gmail.com");
+    data.append("amount", "10");
+    data.append("success_url", "success.php");
+    data.append("cancel_url", "cancel.php");
+
+    let config = {
+      method: "post",
+      maxBodyLength: Infinity,
+      url: "https://pay.uniquepaybd.com/request/payment/create",
       headers: {
-        accept: "application/json",
-        "RT-UDDOKTAPAY-API-KEY": "982d381360a69d419689740d9f2e26ce36fb7a50",
-        "content-type": "application/json",
+        "app-key": "RMQH9SBrM35DE",
+        "secret-key": "32062217",
+        "host-name": "noksha.site",
+        "Content-Type": "application/x-www-form-urlencoded	",
       },
-      data: {
-        full_name: "Fuad",
-        email: "fuadhasandipro007@gmail.com",
-        amount: "55",
-        metadata: {},
-        redirect_url: "#",
-        return_type: "{}",
-        cancel_url: "#",
-      },
+      data: data,
     };
 
     axios
-      .request(options)
-      .then(function (response) {
-        console.log(response.data);
+      .request(config)
+      .then((response) => {
+        console.log(JSON.stringify(response.data));
       })
-      .catch(function (error) {
-        console.error(error);
+      .catch((error) => {
+        console.log(error);
       });
   };
 
