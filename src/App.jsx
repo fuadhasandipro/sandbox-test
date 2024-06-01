@@ -7,16 +7,16 @@ const Card = () => {
   const handleCheckout = async () => {
     const options = {
       method: "POST",
-      url: "https://sandbox.uddoktapay.com/api/checkout-v2",
+      url: "https://pay.noksha.site/api/checkout-v2",
       headers: {
         accept: "application/json",
-        "RT-UDDOKTAPAY-API-KEY": "982d381360a69d419689740d9f2e26ce36fb7a50",
+        "RT-UDDOKTAPAY-API-KEY": "f1d5bd54b659a131aad3020f1bbcd15e5bd275d9",
         "content-type": "application/json",
       },
       data: {
         full_name: "Fuad",
         email: "fuadhasandipro007@gmail.com",
-        amount: "55",
+        amount: "10",
         metadata: {},
         redirect_url: "#",
         return_type: "{}",
