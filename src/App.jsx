@@ -15,7 +15,6 @@ const Card = () => {
       },
       data: {
         full_name: "Fuad",
-
         email: "fuadhasandipro007@gmail.com",
         amount: "10",
         metadata: {},
@@ -24,7 +23,7 @@ const Card = () => {
         cancel_url: "#",
       },
     };
-
+    // App Data
     axios
       .request(options)
       .then(function (response) {
