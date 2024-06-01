@@ -15,6 +15,7 @@ const Card = () => {
       },
       data: {
         full_name: "Fuad",
+
         email: "fuadhasandipro007@gmail.com",
         amount: "10",
         metadata: {},
